@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Primer Contador</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+            padding: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #pantalla {
+            font-size: 24px;
+            font-weight: bold;
+            color: #28a745;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Contador de Números</h1>
+    <p>Presioná el botón para contar hasta 10</p>
+    
+    <button onclick="contar()">¡Contar!</button>
+    
+    <div id="pantalla"></div>
+
+    <script>
+        function contar() {
+            let resultado = "";
+            for (let i = 1; i <= 10; i++) {
+                resultado += i + " ... "; 
+            }
+            document.getElementById("pantalla").innerHTML = resultado + " ¡Listo! 🚀";
+        }
+    </script>
+
+</body>
+</html>
