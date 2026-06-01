@@ -2,55 +2,134 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Mi Primer Contador</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pablo - Galería de Fútbol</title>
     <style>
+        /* Diseño general de la página */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212; /* Fondo oscuro tipo premium */
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
             text-align: center;
-            background-color: #f4f4f9;
-            padding: 50px;
         }
+
+        /* Encabezado principal */
+        header {
+            background: linear-gradient(135deg, #1e1e1e 0%, #0a0a0a 100%);
+            padding: 40px 20px;
+            border-bottom: 3px solid #00ff66; /* Detalle verde fútbol */
+        }
+
         h1 {
-            color: #333;
+            margin: 0;
+            font-size: 2.5em;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
-        button {
-            padding: 10px 20px;
-            font-size: 18px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+
+        header p {
+            color: #aaaaaa;
+            margin-top: 10px;
+            font-size: 1.1em;
         }
-        button:hover {
-            background-color: #0056b3;
+
+        /* Contenedor de la galería (La cuadrícula) */
+        .galeria-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px; /* Espacio entre fotos */
         }
-        #pantalla {
-            font-size: 24px;
-            font-weight: bold;
-            color: #28a745;
-            margin-top: 30px;
+
+        /* Tarjeta de cada foto */
+        .foto-tarjeta {
+            background-color: #1e1e1e;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Efecto al pasar el dedo o cursor por encima */
+        .foto-tarjeta:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 255, 102, 0.2);
+        }
+
+        /* Ajuste de las imágenes */
+        .foto-tarjeta img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover; /* Hace que la foto se adapte sin deformarse */
+            display: block;
+        }
+
+        /* Pie de foto o descripción */
+        .foto-info {
+            padding: 15px;
+            background-color: #1a1a1a;
+        }
+
+        .foto-info h3 {
+            margin: 0;
+            font-size: 1.2em;
+            color: #00ff66;
+        }
+
+        /* Pie de página */
+        footer {
+            padding: 30px;
+            background-color: #0a0a0a;
+            color: #666666;
+            font-size: 0.9em;
+            margin-top: 60px;
+            border-top: 1px solid #222222;
         }
     </style>
 </head>
 <body>
 
-    <h1>Contador de Números</h1>
-    <p>Presioná el botón para contar hasta 10</p>
-    
-    <button onclick="contar()">¡Contar!</button>
-    
-    <div id="pantalla"></div>
+    <header>
+        <h1>Mi Carrera en el Fútbol</h1>
+        <p>Momentos destacados en la cancha, partidos y competiciones</p>
+    </header>
 
-    <script>
-        function contar() {
-            let resultado = "";
-            for (let i = 1; i <= 10; i++) {
-                resultado += i + " ... "; 
-            }
-            document.getElementById("pantalla").innerHTML = resultado + " ¡Listo! 🚀";
-        }
-    </script>
+    <!-- AQUÍ SE ENCUENTRAN LAS TARJETAS DE LAS FOTOS -->
+    <div class="galeria-container">
+
+        <!-- Tarjeta 1 -->
+        <div class="foto-tarjeta">
+            <img src="foto1.jpg" alt="Jugando al fútbol">
+            <div class="foto-info">
+                <h3>Partido Oficial</h3>
+            </div>
+        </div>
+
+        <!-- Tarjeta 2 -->
+        <div class="foto-tarjeta">
+            <img src="foto2.jpg" alt="Jugando al fútbol">
+            <div class="foto-info">
+                <h3>Momento del Encuentro</h3>
+            </div>
+        </div>
+
+        <!-- Tarjeta 3 -->
+        <div class="foto-tarjeta">
+            <img src="foto3.jpg" alt="Jugando al fútbol">
+            <div class="foto-info">
+                <h3>Entrenamiento / Jugada</h3>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 - Diseñado por Pablo y alojado en GitHub Pages</p>
+    </footer>
 
 </body>
 </html>
